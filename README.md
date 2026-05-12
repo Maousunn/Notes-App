@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="app_logo.png" alt="Notes App Logo" width="120" height="120">
+  <img src="app/src/main/res/drawable/notes_logo.png" alt="Notes App Logo" width="120">
 </p>
 
-<h1 align="center">📝 Notes</h1>
+<h1 align="center">Notes</h1>
 
 <p align="center">
-  A clean, professional Android notes application built with Kotlin, Room Database, and Material Design 3.
+  A clean Android notes application built with Kotlin, Room Database, MVVM, and Material Design.
 </p>
 
 <p align="center">
@@ -15,142 +15,108 @@
   <img src="https://img.shields.io/badge/Architecture-MVVM-orange?style=flat-square" alt="Architecture">
 </p>
 
----
+## Screenshots
 
-## ✨ Features
+<p align="center">
+  <img src="screenshots/Splash%20screen.jpg" alt="Splash screen" width="220">
+  <img src="screenshots/App%20home%20UI.jpg" alt="Home screen" width="220">
+  <img src="screenshots/App%20add%20note%20screen.jpg" alt="Add note screen" width="220">
+</p>
 
-- **Create, Edit & Delete Notes** — Full CRUD operations with a clean UI
-- **Room Database** — Persistent local storage that survives app restarts
-- **Filter Notes** — Toggle between All, Completed, and Pending notes
-- **Mark as Complete** — Checkbox toggle with visual strikethrough feedback
-- **Splash Screen** — Professional launch experience using AndroidX SplashScreen API
-- **Material Design 3** — Modern, clean UI following Google's design guidelines
-- **Dark Mode Support** — Automatic light/dark theme based on system settings
-- **Empty State** — Friendly UI when no notes exist
-- **Timestamps** — Each note displays when it was created/updated
+<p align="center">
+  <img src="screenshots/Note%20pending%20UI.jpg" alt="Pending note screen" width="220">
+  <img src="screenshots/Note%20completed%20UI.jpg" alt="Completed note screen" width="220">
+</p>
 
----
+## Features
 
-## 📸 Screenshots
+- Create, edit, and delete notes
+- Save notes locally with Room Database
+- Filter notes by all, completed, and pending states
+- Mark notes as complete with checkbox feedback
+- Launch experience using AndroidX SplashScreen
+- Material Design based UI
+- Light and dark theme support
+- Empty state for a clean first-run experience
+- Created and updated timestamps for each note
 
-| Splash Screen | Home (Light) | Home (Dark) |
-|:---:|:---:|:---:|
-| ![Splash Screen](screenshots/splash.png) | ![Home Light](screenshots/home_light.png) | ![Home Dark](screenshots/home_dark.png) |
+## Architecture
 
-| Add Note | Edit Note | Empty State |
-|:---:|:---:|:---:|
-| ![Add Note](screenshots/add_note.png) | ![Edit Note](screenshots/edit_note.png) | ![Empty State](screenshots/empty_state.png) |
+The app follows the MVVM pattern:
 
-> **Note:** Replace the screenshot placeholders above with actual screenshots from your device.
-
----
-
-## 🏗️ Architecture
-
-The app follows the **MVVM (Model-View-ViewModel)** architecture pattern:
-
-```
+```text
 com.example.notes/
-├── data/
-│   ├── Note.kt              # Room Entity (data model)
-│   ├── NoteDao.kt            # Data Access Object (database queries)
-│   ├── NoteDatabase.kt       # Room Database (singleton)
-│   └── NoteRepository.kt     # Repository (clean API for ViewModel)
-├── ui/
-│   ├── SplashActivity.kt     # Splash screen
-│   ├── MainActivity.kt       # Main notes list screen
-│   ├── AddEditNoteActivity.kt # Add/Edit note screen
-│   └── NotesAdapter.kt       # RecyclerView adapter with DiffUtil
-├── viewmodel/
-│   └── NotesViewModel.kt     # ViewModel + ViewModelFactory
-└── NotesApplication.kt       # Application class (DB initialization)
+|-- data/
+|   |-- Note.kt
+|   |-- NoteDao.kt
+|   |-- NoteDatabase.kt
+|   `-- NoteRepository.kt
+|-- ui/
+|   |-- SplashActivity.kt
+|   |-- MainActivity.kt
+|   |-- AddEditNoteActivity.kt
+|   `-- NotesAdapter.kt
+|-- viewmodel/
+|   `-- NotesViewModel.kt
+`-- NotesApplication.kt
 ```
 
-### Data Flow
-
-```
-UI (Activity) → ViewModel → Repository → DAO → Room Database
-       ↑                                           |
-       └──────── LiveData (auto-updates) ──────────┘
+```text
+Activity -> ViewModel -> Repository -> DAO -> Room Database
+   ^                                           |
+   `--------------- LiveData updates ----------`
 ```
 
----
-
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Component | Technology |
-|-----------|-----------|
-| **Language** | Kotlin |
-| **UI Framework** | Android XML + Material Design 3 |
-| **Database** | Room (SQLite wrapper) |
-| **Architecture** | MVVM |
-| **Async** | Kotlin Coroutines |
-| **Reactive** | LiveData |
-| **DI** | Manual (Application class) |
-| **Build System** | Gradle (Kotlin DSL) |
+| --- | --- |
+| Language | Kotlin |
+| UI | Android XML, Material Design |
+| Database | Room |
+| Architecture | MVVM |
+| Async | Kotlin Coroutines |
+| Reactive data | LiveData |
+| Build system | Gradle Kotlin DSL |
 
----
+## Requirements
 
-## 📦 Dependencies
+- Android Studio
+- JDK 11 or newer
+- Android SDK 24 or newer
 
-```kotlin
-// Core Android
-androidx.core:core-ktx
-androidx.appcompat:appcompat
-com.google.android.material:material
+## Getting Started
 
-// Room Database
-androidx.room:room-runtime
-androidx.room:room-ktx
-androidx.room:room-compiler (KSP)
+1. Clone the repository:
 
-// Lifecycle
-androidx.lifecycle:lifecycle-viewmodel-ktx
-androidx.lifecycle:lifecycle-livedata-ktx
-
-// Coroutines
-org.jetbrains.kotlinx:kotlinx-coroutines-android
-
-// UI Components
-androidx.recyclerview:recyclerview
-androidx.cardview:cardview
-androidx.core:core-splashscreen
-```
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Android Studio Hedgehog or later
-- JDK 11+
-- Android SDK 24+
-
-### Installation
-
-1. **Clone the repository**
    ```bash
    git clone https://github.com/YOUR_USERNAME/Notes.git
    ```
 
-2. **Open in Android Studio**
-   - File → Open → Select the project directory
+2. Open the project in Android Studio.
 
-3. **Sync Gradle**
-   - Android Studio will prompt you to sync — click "Sync Now"
+3. Sync Gradle.
 
-4. **Run the app**
-   - Select a device/emulator and click ▶️ Run
+4. Run the app on an emulator or Android device.
 
----
+## Build
 
-## 📄 License
+Run unit tests:
 
-This project is open source and available under the [MIT License](LICENSE).
+```bash
+./gradlew test
+```
 
----
+Build a debug APK:
 
-<p align="center">
-  Made with ❤️ using Kotlin & Material Design 3
-</p>
+```bash
+./gradlew assembleDebug
+```
+
+## Project Info
+
+- Package: `com.example.notes`
+- Compile SDK: `35`
+- Target SDK: `34`
+- Minimum SDK: `24`
+- Version: `1.0`
