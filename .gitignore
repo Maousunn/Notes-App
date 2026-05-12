@@ -1,0 +1,44 @@
+# Android Studio / IntelliJ
+*.iml
+/.idea/caches/
+/.idea/libraries/
+/.idea/shelf/
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+
+# Local machine configuration
+local.properties
+.env
+.env.*
+!.env.example
+
+# Gradle / Kotlin build output
+.gradle/
+.kotlin/
+/build/
+**/build/
+/out/
+
+# Android generated artifacts
+/captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.ap_
+*.aab
+*.dex
+*.class
+*.hprof
+
+# Signing keys and local secrets
+*.jks
+*.keystore
+*.p12
+*.pem
+
+# Logs and OS files
+*.log
+.DS_Store
+Thumbs.db

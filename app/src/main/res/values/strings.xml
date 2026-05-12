@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Notes</string>
+    <string name="app_title_my_notes">My Notes</string>
+    <string name="splash_tagline">Capture your thoughts</string>
+
+    <!-- Filter -->
+    <string name="filter_all">All</string>
+    <string name="filter_completed">Completed</string>
+    <string name="filter_pending">Pending</string>
+
+    <!-- Actions -->
+    <string name="add_note">Add Note</string>
+    <string name="save_note">Save Note</string>
+    <string name="delete_note">Delete Note</string>
+
+    <!-- Hints -->
+    <string name="hint_title">Title</string>
+    <string name="hint_content">Write your note here…</string>
+
+    <!-- Empty State -->
+    <string name="empty_state_title">No notes yet</string>
+    <string name="empty_state_subtitle">Tap + to create your first note</string>
+    <string name="empty_state_desc">Empty notes illustration</string>
+</resources>
