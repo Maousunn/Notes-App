@@ -24,7 +24,7 @@
 </p>
 
 <p align="center">
-  <img src="screenshots/Note%20pending%20UI.jpg" alt="Pending note screen" width="220">
+  <img src="screenshots/Note_pendin_UI.jpg" alt="Pending note screen" width="220">
   <img src="screenshots/Note%20completed%20UI.jpg" alt="Completed note screen" width="220">
 </p>
 
